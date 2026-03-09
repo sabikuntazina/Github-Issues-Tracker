@@ -41,7 +41,7 @@
     <!-- title  -->
       <title>GitHub Issues Tracker</title>
   </head>
-  <body class="bg-blue-50">
+  <body class="bg-[#f8fafc]">
 
     <header>
       <div class="navbar bg-base-100 shadow-sm">
@@ -68,9 +68,9 @@
 
 
 
-    <div class="w-11/12 mx-auto">
+    <div class="w-11/12 mx-auto my-10">
       <section class="w-11/12 mx-auto">
-        <div id="tab-container" class="flex gap-4 flex-wrap justify-left bg-white shadow py-2 px-5">
+        <div id="tab-container" class="flex gap-4 flex-wrap justify-left bg-[#f8fafc] shadow py-2 px-5">
           <button class="btn btn-primary text-white tab" id="allTab">All</button>
           <button class="btn btn-primary btn-outline tab" id="openTab">
             Open
@@ -87,8 +87,10 @@
         </div>
         <div
           id="issue-container" 
-          class="grid grid-cols-4 gap-5 bg-white/80 my-10 shadow py-4 px-5"
+          class="grid grid-cols-2 md:grid-cols-4 gap-5 bg-white/80 my-10 shadow py-4 px-5"
         >
+
+       
 
         
           <!-- cards  -->
@@ -109,6 +111,11 @@
             <p class="text-gray-500 text-sm ">#1 by john_doe</p>
             <p class="text-gray-500 text-sm ">1/15/2024</p>
           </div> -->
+        </div>
+
+         <div id="loading-spinner" class="h-[60vh] hidden justify-center items-center">
+
+          <span class="loading loading-spinner loading-xl"></span>
         </div>
       </section>
 

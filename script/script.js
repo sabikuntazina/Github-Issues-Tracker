@@ -1,12 +1,16 @@
 const allTab = document.getElementById("allTab");
 const openTab = document.getElementById("openTab");
 const closeTab = document.getElementById("closedTab");
+const loadingSpinner= document.getElementById('loading-spinner');
 let allIssues = [];
 
 const loadAllIssues = () => {
+  loadingSpinner.classList.remove("hidden")
+  loadingSpinner.classList.add("flex")
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((res) => res.json())
     .then((json) => {
+      loadingSpinner.classList.add("hidden")
       allIssues = json.data;
       displayAllIssues(allIssues);
     });
