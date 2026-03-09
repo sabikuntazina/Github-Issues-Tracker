@@ -186,4 +186,13 @@ detailContainer.innerHTML=`
 
 loadAllIssues();
 
-// id="lesson-btn-${issueTab.level_no}" onclick="loadLevelWord(${issueTab.status})"
+document.getElementById('btn-search').addEventListener('click', ()=>{
+  const input= document.getElementById('input-search');
+  const searchValue= input.value.trim().toLowerCase();
+  fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues').then(res=>res.json()).then(data=>{
+    const allIssues= data.data;
+    const searchIssues= allIssues.filter(issue=>issue.title.toLowerCase().includes(searchValue));
+    displayAllIssues(searchIssues)
+  })
+
+})
