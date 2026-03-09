@@ -120,5 +120,16 @@ const filterIssues = (status) => {
 
 };
 
+const activeButton = (id) => {
+
+  removeActive();
+
+  const activeTab = document.getElementById(id);
+
+  activeTab.classList.remove('btn-outline');
+
+  activeTab.classList.add('btn-primary', 'text-white');
+
+};
 
 // id="lesson-btn-${issueTab.level_no}" onclick="loadLevelWord(${issueTab.status})"
