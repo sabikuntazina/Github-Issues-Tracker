@@ -72,8 +72,8 @@ const displayAllIssues = (issues) => {
               ${issue.description}
             </p>
             <div class="flex space-x-4 my-6">
-               <div class="text-sm bg-red-300 px-2 py-2 text-red-800 rounded-xl border-2 border-red-500"><i class="fa-solid fa-bug"></i> Bug</div>
-              <div class="text-sm bg-yellow-100 px-2 py-2 text-yellow-700 border-2 rounded-xl border-yellow-200">help wanted</div>
+                 <div class="text-sm bg-yellow-200 px-2 py-1 text-yellow-800 rounded-xl border-2 border-yellow-500"><i class="fa-solid fa-bug"></i> ${issue.labels[0]} </div>
+              <div class="text-sm bg-yellow-200 px-2 py-1 text-yellow-800 border-2 rounded-xl border-yellow-500">${issue.labels[1]}</div>
             </div>
             <hr />
              <p class="text-gray-500 text-sm">
@@ -157,13 +157,13 @@ detailContainer.innerHTML=`
     <h2 class="text-lg font-bold text-neutral-950">${details.title} </h2>
 
     <ul class="flex items-center">
-      <li class="list-none ${details.status==="open"? "bg-green-700": "bg-red-700" } rounded-xl py-2 px-3 text-white mr-5">${details.status}</li>
+      <li class="list-none font-bold ${details.status==="open"? "bg-green-700": "bg-purple-600" } rounded-xl py-2 px-3 text-white mr-5">${details.status}</li>
       <li class="list-disc list-inside pl-0 mr-5 text-gray-500 text-sm ">${details.status}ed by ${details.author}</li>
       <li class="list-disc mr-5 list-inside text-gray-500 text-sm pl-0"> ${new Date(details.updatedAt).toLocaleDateString("en-GB")}</li>
     </ul>
-    <div class="space-x-4 my-6">
-              <button class="bg-red-300 px-4 py-2 text-red-800 rounded-xl border-2 border-red-500"><i class="fa-solid fa-bug"></i> Bug</button>
-              <button class="bg-yellow-100 px-4 py-2 text-yellow-700 border-2 rounded-xl border-yellow-200">help wanted</button>
+    <div class="space-x-4 my-6 flex items-center">
+               <div class="text-sm bg-yellow-200 px-2 py-1 text-yellow-800 rounded-xl border-2 border-yellow-500"><i class="fa-solid fa-bug"></i> ${details.labels[0]} </div>
+              <div class="text-sm bg-yellow-200 px-2 py-1 text-yellow-800 border-2 rounded-xl border-yellow-500">${details.labels[1]}</div>
             </div>
             <p class="text-gray-500 text-sm ">
               ${details.description}
