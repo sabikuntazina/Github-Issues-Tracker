@@ -31,7 +31,39 @@ const displayAllIssues = (issues) => {
   issueContainer.innerHTML = "";
   
   issues.forEach((issue) => {
-    
+    const issueSection= document.getElementById('issue-section')
+
+  issueSection.innerHTML=`<div>
+
+          <div >
+
+          <div><div>
+
+            <img src="./assets/Aperture.png" alt="">
+
+          </div>
+
+             <div><h2>${issues.length}  Issues</h2>
+
+            <p>Track and manage your project issues</p></div>
+
+           </div>
+
+          </div>
+
+          <div>
+
+            <div>
+
+              <div><div></div><h2>Open</h2></div>
+
+           <div><div></div><h2>Closed</h2></div>
+
+            </div>
+
+          </div>
+
+        </div>`
     const card = document.createElement("div");
     card.innerHTML = `
     
