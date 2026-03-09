@@ -96,6 +96,29 @@ const displayAllIssues = (issues) => {
     issueContainer.append(card);
   });
 };
+const filterIssues = (status) => {
+
+  removeActive();
+
+  if (status === "all") {
+
+    displayAllIssues(allIssues);
+
+  } else {
+
+    const filtered = allIssues.filter(issue => issue.status === status);
+
+    displayAllIssues(filtered);
+
+  }
+
+  const activeTab = document.getElementById(status + "Tab");
+
+  activeTab.classList.remove("text-black","btn-outline");
+
+  activeTab.classList.add("btn-primary","text-white");
+
+};
 
 
 // id="lesson-btn-${issueTab.level_no}" onclick="loadLevelWord(${issueTab.status})"
