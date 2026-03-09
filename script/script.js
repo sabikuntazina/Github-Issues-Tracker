@@ -71,7 +71,7 @@ const displayAllIssues = (issues) => {
             <p class="text-gray-500 text-sm line-clamp-2 ">
               ${issue.description}
             </p>
-            <div class="space-x-4 my-6">
+            <div class="flex space-x-4 my-6">
               <button class="btn btn-soft btn-error rounded-xl border-2 border-red-300"><i class="fa-solid fa-bug"></i> Bug</button>
               <button class="btn btn-soft btn-warning border-2 rounded-xl border-yellow-200">help wanted</button>
             </div>
